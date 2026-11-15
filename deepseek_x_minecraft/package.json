@@ -1,0 +1,48 @@
+{
+  "name": "dsh-minecraft",
+  "version": "0.5.0",
+  "private": true,
+  "description": "DSH-MINECRAFT — capture the desktop or Minecraft for the model, drive real mouse/keyboard, and bridge to the dsh_minecraft mod.",
+  "type": "module",
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "dsh-plugin",
+    "screen-capture",
+    "computer-use",
+    "windows",
+    "minecraft"
+  ],
+  "os": [
+    "win32"
+  ],
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.png"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "watch.cjs",
+    "helper/screen_helper.py",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "icon.png",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": ["@deepseek-ai/dsh-client-ui-conversation"]
+    }
+  }
+}
